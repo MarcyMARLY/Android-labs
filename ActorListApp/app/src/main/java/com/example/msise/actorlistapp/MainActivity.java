@@ -1,9 +1,11 @@
 package com.example.msise.actorlistapp;
 
+import android.content.res.Configuration;
 import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -35,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.activity_main_rv);
         mAdapter = new ActorAdapter(mActorList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        if(getApplication().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            mRecyclerView.setLayoutManager(mLayoutManager);
+        }
+        else{
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplication(), 2));
+        }
         mRecyclerView.setAdapter(mAdapter);
 
         fab = (FloatingActionButton) findViewById(R.id.activity_main_fab);
@@ -47,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 mAdapter.notifyDataSetChanged();
             }
         });
+
     }
 
     @Override
