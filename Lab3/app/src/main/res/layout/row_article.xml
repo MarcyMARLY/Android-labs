@@ -2,8 +2,9 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:backgroundTint="#FFF"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_background"
+    android:layout_margin="10dp"
     android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -25,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
+        android:textColor="#000"
         />
 
     <TextView
