@@ -1,7 +1,7 @@
 package com.example.msise.tabapp.models
 
 data class Article(
-        val title: String,
-        val data: String,
-        val body:String
+        var title: String,
+        var data: String,
+        var body:String
 )
