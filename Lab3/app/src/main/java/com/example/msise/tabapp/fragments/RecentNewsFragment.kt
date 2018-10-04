@@ -1,5 +1,6 @@
 package com.example.msise.tabapp.fragments
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -9,15 +10,20 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.msise.tabapp.ArticleClickListener
 import com.example.msise.tabapp.R
 import com.example.msise.tabapp.adapters.RecentNewsAdapter
 import com.example.msise.tabapp.models.Article
 import kotlinx.android.synthetic.main.fragment_recent_news.fragment_recent_news_rv
+import com.example.msise.tabapp.NewsDetailsActivity
+
 
 class RecentNewsFragment : Fragment() {
     private var recView: RecyclerView? = null
     private var newsList: MutableList<Article>? = ArrayList()
     private var newsAdapter: RecentNewsAdapter? = null
+
+    private val EXTRA_ARTICLE:String = "extra_article"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_recent_news, container, false)
@@ -27,8 +33,16 @@ class RecentNewsFragment : Fragment() {
         recView = fragment_recent_news_rv
 
         fillList()
+
         if (newsList != null) {
-            newsAdapter = RecentNewsAdapter(newsList!!)
+            newsAdapter = RecentNewsAdapter(newsList!!, object : ArticleClickListener{
+                override fun onClick(view: View, position: Int) {
+                    val postArticle = newsList!![position]
+                    val intent: Intent = Intent(context, NewsDetailsActivity::class.java)
+                    intent.putExtra(EXTRA_ARTICLE, postArticle)
+                    startActivity(intent)
+                }
+            })
         }
         val linearLayoutManager = LinearLayoutManager(context)
 
