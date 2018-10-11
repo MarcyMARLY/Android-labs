@@ -10,8 +10,7 @@ import com.example.msise.newsapp.model.ArticleData
 
 class NewsAdapter(
         private val newsList: List<ArticleData>
-): RecyclerView.Adapter<NewsAdapter.NewsViewHolder>()
-{
+) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val itemView = LayoutInflater.from(parent.context)
                 .inflate(R.layout.row_article, parent, false)
@@ -28,7 +27,7 @@ class NewsAdapter(
         holder.date.text = currentPosition.data
     }
 
-    class NewsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title: TextView
         var date: TextView
 

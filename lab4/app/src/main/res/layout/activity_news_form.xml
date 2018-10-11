@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AuthorizationStyle"
-    tools:context=".MainActivity">
+    tools:context=".NewsFormActivity">
 
     <EditText
-        android:id="@+id/activity_et_email"
+        android:id="@+id/activity_et_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="170dp"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:hint="Title"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,34 +23,34 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/activity_et_password"
+        android:id="@+id/activity_et_date"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:hint="Data"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_et_email"
+        app:layout_constraintTop_toBottomOf="@+id/activity_et_title"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/activity_button_login"
+        android:id="@+id/activity_button_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
         android:background="@color/colorPrimary"
-        android:text="LOGIN"
+        android:text="SEND"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_et_password"
+        app:layout_constraintTop_toBottomOf="@+id/activity_et_date"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
