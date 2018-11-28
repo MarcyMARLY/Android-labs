@@ -24,7 +24,7 @@ class NewsAdapter(
         val currentPosition = newsList[position]
 
         holder.title.text = currentPosition.title
-        holder.date.text = currentPosition.data
+        holder.date.text = currentPosition.body
     }
 
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
